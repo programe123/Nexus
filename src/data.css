@@ -1,0 +1,68 @@
+/* New component styles for the data-integration layer.
+   Loaded after styles.css so it can extend the existing design system. */
+
+/* ---- source card extras ---- */
+.source-foot span{display:inline-flex;align-items:center;gap:5px}
+.banner-refresh{display:grid;place-items:center;width:30px;height:30px;border:1px solid #2c4a63;border-radius:7px;background:#0d1e30;color:#7fd7ff;margin-left:auto}
+.banner-refresh:hover{border-color:#4fb3ff;color:#bfe9ff}
+.connection-banner.degraded{border-color:rgba(244,114,146,.35);background:linear-gradient(90deg,rgba(244,114,146,.1),rgba(79,179,255,.05))}
+.connection-banner.degraded .pulse-orb{background:rgba(244,114,146,.14);color:#ff9ca8}
+.weather-meta{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 4px;color:#8ba1b8;font-size:10px}
+.weather-meta span{display:inline-flex;align-items:center;gap:4px}
+.mini-bars{display:flex;align-items:flex-end;gap:8px;margin-top:12px}
+.mini-bars>div{display:flex;flex-direction:column;align-items:center;gap:5px;flex:1}
+.mini-bars i{width:100%;max-width:16px;border-radius:4px;background:linear-gradient(180deg,#7fd0ff,#2f6ea8);display:block}
+.mini-bars span{color:#7d92a9;font-size:9px;text-transform:uppercase}
+.input-badges span.is-live{border-color:rgba(85,228,163,.4);color:#6deeb4}
+
+/* ---- spinning indicator ---- */
+@keyframes nexus-spin{to{transform:rotate(360deg)}}
+.spin{animation:nexus-spin 1s linear infinite}
+
+/* ---- appliance catalogue ---- */
+.appliance-catalog{margin-top:16px;border-top:1px solid #1d2d43;padding-top:14px}
+.catalog-toolbar{display:flex;gap:8px;align-items:center}
+.catalog-search{flex:1;display:flex;align-items:center;gap:6px;height:30px;padding:0 9px;border:1px solid #283a53;border-radius:6px;background:#091526;color:#7d92a9}
+.catalog-search input{flex:1;border:0;background:transparent;color:#dce9f7;font-size:11px;outline:none}
+.catalog-toolbar select{height:30px;padding:0 8px;border:1px solid #283a53;border-radius:6px;background:#091526;color:#c3d5e8;font-size:11px}
+.catalog-note{margin:9px 0 10px;color:#75899f;font-size:10px;line-height:1.45}
+.catalog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:7px;max-height:250px;overflow-y:auto;padding-right:4px}
+.catalog-chip{display:flex;flex-direction:column;gap:4px;text-align:left;padding:9px;border:1px solid #22344c;border-radius:7px;background:#0b1727;color:#c9d8ea}
+.catalog-chip:hover:not(:disabled){border-color:#3f7a99;background:#0e1f33}
+.catalog-chip:disabled{opacity:.45;cursor:not-allowed}
+.chip-head{display:flex;align-items:center;gap:5px}
+.chip-head b{font-size:10px}
+.chip-meta{color:#75899f;font-size:9px}
+.chip-action{display:inline-flex;align-items:center;gap:3px;color:#6deeb4;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.catalog-chip.added .chip-action{color:#8798ad}
+.catalog-empty{color:#75899f;font-size:10px;text-align:center;padding:14px 0}
+.remove-appliance{align-self:center;justify-self:end;display:grid;place-items:center;width:26px;height:26px;border:1px solid transparent;border-radius:6px;background:transparent;color:#63768d}
+.remove-appliance:hover{color:#ff9ca8;border-color:#4a2b38;background:rgba(244,114,146,.08)}
+.appliance-row{grid-template-columns:1.5fr .7fr .7fr .85fr .8fr 26px 34px}
+
+/* ---- tariff plan picker ---- */
+.tariff-plans{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+.tariff-plan{display:grid;grid-template-columns:18px 1fr auto;gap:9px;align-items:center;text-align:left;padding:9px 10px;border:1px solid #22344c;border-radius:7px;background:#0b1727;color:#c9d8ea}
+.tariff-plan:hover{border-color:#3f7a99}
+.tariff-plan.selected{border-color:#f5b85c;background:rgba(245,184,92,.07)}
+.plan-radio{display:grid;place-items:center;width:15px;height:15px;border:1px solid #3a5570;border-radius:50%;color:#07101e}
+.tariff-plan.selected .plan-radio{background:#f5b85c;border-color:#f5b85c}
+.plan-copy b{display:block;font-size:11px}
+.plan-copy small{display:block;color:#75899f;font-size:9px;margin-top:2px}
+.plan-rates{text-align:right}
+.plan-rates b{display:block;font-size:12px}
+.plan-rates small{display:block;color:#75899f;font-size:9px;margin-top:2px}
+
+/* ---- carbon provider control ---- */
+.carbon-provider-row{display:flex;align-items:center;gap:8px;margin-top:12px;border-top:1px solid #1d2d43;padding-top:12px}
+.carbon-provider-row>span{color:#75899f;font-size:10px;flex:1}
+.carbon-provider-row select{height:29px;padding:0 8px;border:1px solid #283a53;border-radius:6px;background:#091526;color:#c3d5e8;font-size:10px}
+.carbon-provider-row button{height:29px;padding:0 10px;border:1px solid #2c4a63;border-radius:6px;background:#0d1e30;color:#7fd7ff;font-size:10px;display:inline-flex;align-items:center;gap:5px}
+.carbon-provider-row button:disabled{opacity:.6;cursor:progress}
+
+@media (max-width: 620px){
+  .catalog-grid{grid-template-columns:repeat(2,1fr)}
+  .appliance-row{grid-template-columns:1fr 1fr 1fr 32px}
+  .remove-appliance{display:none}
+  .carbon-provider-row{flex-wrap:wrap}
+}
